@@ -1,4 +1,4 @@
-package com.example.be_deliveryfood.dto;
+package com.example.be_deliveryfood.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
