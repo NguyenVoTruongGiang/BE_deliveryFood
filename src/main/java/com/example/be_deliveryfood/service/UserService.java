@@ -2,15 +2,13 @@ package com.example.be_deliveryfood.service;
 
 
 import com.example.be_deliveryfood.config.JwtService;
-import com.example.be_deliveryfood.dto.LoginRequest;
 import com.example.be_deliveryfood.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import jakarta.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
-import com.example.be_deliveryfood.repository.UserRepository;
+import com.example.be_deliveryfood.dto.repository.UserRepository;
 
 @Service
 public class UserService {

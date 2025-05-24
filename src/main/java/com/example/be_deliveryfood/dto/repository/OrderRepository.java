@@ -1,4 +1,4 @@
-package com.example.be_deliveryfood.repository;
+package com.example.be_deliveryfood.dto.repository;
 
 import com.example.be_deliveryfood.entity.Order;
 import com.example.be_deliveryfood.entity.User;

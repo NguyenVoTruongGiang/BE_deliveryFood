@@ -1,4 +1,4 @@
-package com.example.be_deliveryfood.dto;
+package com.example.be_deliveryfood.dto.request;
 
 import lombok.Data;
 
