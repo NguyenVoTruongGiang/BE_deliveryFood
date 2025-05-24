@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Pizza Margherita",
+    "category": "Pizza",
+    "description": "Classic pizza with tomato and mozzarella",
+    "price": 10.99,
+    "available": true
+  },
+  {
+    "name": "Cheese Burger",
+    "category": "Burger",
+    "description": "Beef patty with cheddar cheese",
+    "price": 8.99,
+    "available": true
+  }
+]

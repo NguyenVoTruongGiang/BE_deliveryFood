@@ -1,6 +1,8 @@
+com\example\be_deliveryfood\controller\CartController.class
 com\example\be_deliveryfood\service\UserService.class
 com\example\be_deliveryfood\entity\User.class
 com\example\be_deliveryfood\service\OrderService.class
+com\example\be_deliveryfood\dto\request\CartRequest.class
 com\example\be_deliveryfood\dto\request\OrderRequest$OrderItemRequest.class
 com\example\be_deliveryfood\entity\Product.class
 com\example\be_deliveryfood\dto\repository\ProductRepository.class
@@ -8,12 +10,16 @@ com\example\be_deliveryfood\entity\OrderItem.class
 com\example\be_deliveryfood\config\JwtService.class
 com\example\be_deliveryfood\controller\UserController.class
 com\example\be_deliveryfood\entity\Order$OrderStatus.class
+com\example\be_deliveryfood\service\CartService.class
 com\example\be_deliveryfood\BeDeliveryFoodApplication.class
 com\example\be_deliveryfood\config\GlobalExceptionHandler$ErrorResponse.class
 com\example\be_deliveryfood\dto\request\LoginRequest.class
+com\example\be_deliveryfood\dto\repository\OrderItemRepository.class
 com\example\be_deliveryfood\config\GlobalExceptionHandler.class
 com\example\be_deliveryfood\entity\Order.class
+com\example\be_deliveryfood\dto\repository\CartRepository.class
 com\example\be_deliveryfood\dto\request\OrderRequest.class
 com\example\be_deliveryfood\dto\repository\UserRepository.class
+com\example\be_deliveryfood\entity\Cart.class
 com\example\be_deliveryfood\entity\User$Role.class
 com\example\be_deliveryfood\dto\repository\OrderRepository.class

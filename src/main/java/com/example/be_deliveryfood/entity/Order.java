@@ -18,10 +18,6 @@ public class Order {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id")
-    private List<OrderItem> items;
-
     @Column(length = 255)
     private String deliveryAddress;
 
@@ -38,4 +34,6 @@ public class Order {
     public enum OrderStatus {
         PENDING, PREPARING, DELIVERING, COMPLETED, CANCELLED
     }
+
+
 }

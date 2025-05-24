@@ -1,0 +1,14 @@
+[
+  {
+    "cartId": 1,
+    "productId": 1,
+    "quantity": 2,
+    "price": 10.99
+  },
+  {
+    "cartId": 1,
+    "productId": 2,
+    "quantity": 1,
+    "price": 8.99
+  }
+]
