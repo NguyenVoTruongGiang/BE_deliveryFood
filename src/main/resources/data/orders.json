@@ -1,0 +1,7 @@
+{
+  "user_id": 1,
+  "delivery_address": "123 Main St, City",
+  "total_price": 30.97,
+  "status": "PENDING",
+  "created_at": "2025-05-24T16:05:00"
+}

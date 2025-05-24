@@ -13,9 +13,11 @@ public class OrderRequest {
     @NotEmpty(message = "Order must contain at least one item")
     private List<OrderItemRequest> items;
 
+    private Long cartId;
+
     @Data
     public static class OrderItemRequest {
-        private Long menuItemId;
+        private Long productId;
         private Integer quantity;
     }
 }
