@@ -1,5 +1,6 @@
 package com.example.be_deliveryfood.controller;
 
+import com.example.be_deliveryfood.dto.request.LoginRequest;
 import com.example.be_deliveryfood.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,20 +8,25 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import com.example.be_deliveryfood.service.UserService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
-//    @PostMapping("/login")
-//    public ResponseEntity<String> login(@Valid @RequestBody LoginRequest loginRequest) throws Exception {
-//        String token = userService.login(loginRequest);
-//        return ResponseEntity.ok(token);
-//    }
+    @PostMapping("/login")
+    public ResponseEntity<Map<String, String>> login(@Valid @RequestBody LoginRequest loginRequest) throws Exception {
+        String token = userService.login(loginRequest);
+        Map<String, String> response = new HashMap<>();
+        response.put("token", token);
+        response.put("message", "Login successful");
+        return ResponseEntity.ok(response);
+    }
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@Valid @RequestBody User user) {

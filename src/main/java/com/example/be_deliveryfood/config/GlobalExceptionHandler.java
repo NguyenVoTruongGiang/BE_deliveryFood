@@ -69,11 +69,13 @@ public class GlobalExceptionHandler {
         for (FieldError error : e.getBindingResult().getFieldErrors()) {
             errors.put(error.getField(), error.getDefaultMessage());
         }
-        String details = errors.toString();
+        String details = String.join("; ", errors.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .toList());
         logger.warning("Validation failed for request body: " + details);
         return buildErrorResponse(
                 "error.validation.request",
-                "Invalid request body: " + details,
+                "Nội dung yêu cầu không hợp lệ",
                 HttpStatus.BAD_REQUEST,
                 details
         );

@@ -8,5 +8,12 @@ import java.util.Optional;
 
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Long> {
+    // tìm kiếm theo userId
     Optional<Cart> findByUserId(Long userId);
+
+    // tìm kiếm theo productId
+    Optional<Cart> findByProductId(Long productId);
+
+    // kiểm tra product trong cart có tồn tại hay chưa
+    Boolean existsByProductId(Long productId);
 }

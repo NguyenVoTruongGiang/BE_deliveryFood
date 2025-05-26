@@ -27,39 +27,50 @@ public class CartService {
 
     @Autowired
     private UserRepository userRepository;
-//
-//    @Transactional
-//    public Cart addToCart(Long userId, CartRequest cartRequest) {
-//        User user = userRepository.findById(userId)
-//                .orElseThrow(() -> new ValidationException("User not found"));
-//        Product product = productRepository.findById(cartRequest.getProductId())
-//                .orElseThrow(() -> new ValidationException("Product not found"));
-//
-//        // Check if a cart exists for this user and product
-//        Cart cart = cartRepository.findByUserIdAndProductId(userId, cartRequest.getProductId())
-//                .orElseGet(() -> {
-//                    Cart newCart = new Cart();
-//                    newCart.setUser(user);
-//                    newCart.setProduct(product);
-//                    newCart.setAddOns(cartRequest.getAddOns() != null ? cartRequest.getAddOns() : "");
-//                    return cartRepository.save(newCart);
-//                });
-//
-//        // Update or create OrderItem for quantity
-//        OrderItem orderItem = orderItemRepository.findByCartId(cart.getId())
-//                .orElseGet(() -> {
-//                    OrderItem newItem = new OrderItem();
-//                    newItem.setCart(cart);
-//                    newItem.setProduct(product);
-//                    newItem.setPrice(product.getPrice());
-//                    return newItem;
-//                });
-//
-//        orderItem.setQuantity(cartRequest.getQuantity());
-//        orderItemRepository.save(orderItem);
-//
-//        return cart;
-//    }
+
+    @Transactional
+    public Cart addToCart(Long userId, CartRequest cartRequest) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ValidationException("User not found"));
+        Product product = productRepository.findById(cartRequest.getProductId())
+                .orElseThrow(() -> new ValidationException("Product not found"));
+
+        // Kiểm tra xem người dùng đã có giỏ hàng và sản phẩm chưa?
+        Cart cart = cartRepository.findByProductId(cartRequest.getProductId())
+                .filter(c -> c.getUser().getId().equals(userId))
+                .orElse(null);
+        if (cart == null) {
+            // tạo cart mới nếu không có cart tồn tại
+            cart = new Cart();
+            cart.setUser(user);
+            cart.setProduct(product);
+            cart.setAddOns(cartRequest.getAddOns() != null ? cartRequest.getAddOns() : "");
+            cart = cartRepository.save(cart);
+        }
+
+        // Kiểm tra xem có OrderItem nào hiện có trong giỏ hàng không?
+        OrderItem orderItem = orderItemRepository.findByCartId(cart.getId())
+                .orElse(null);
+        if (orderItem == null) {
+            orderItem = new OrderItem();
+            orderItem.setCart(cart);
+            orderItem.setProduct(product);
+            orderItem.setPrice(product.getPrice());
+            orderItem.setQuantity(cartRequest.getQuantity() != null ? cartRequest.getQuantity() : 1);
+            orderItemRepository.save(orderItem);
+        } else {
+            // update số lượng sản phẩm tỏng giỏ hàng
+            Integer newQuantity = cartRequest.getQuantity() != null ? cartRequest.getQuantity() : orderItem.getQuantity() + 1;
+            if (newQuantity <= 0) {
+                orderItemRepository.delete(orderItem);
+                cartRepository.delete(cart);
+                return null;
+            }
+            orderItem.setQuantity(newQuantity);
+        }
+        orderItemRepository.save(orderItem);
+        return cart;
+    }
 
 //    @Transactional
 //    public Order createOrder(OrderRequest orderRequest) {

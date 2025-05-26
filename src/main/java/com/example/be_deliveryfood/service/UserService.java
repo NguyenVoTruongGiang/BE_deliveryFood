@@ -1,40 +1,73 @@
 package com.example.be_deliveryfood.service;
 
-
-import com.example.be_deliveryfood.config.JwtService;
+import com.example.be_deliveryfood.config.JwtUtil;
 import com.example.be_deliveryfood.dto.request.LoginRequest;
 import com.example.be_deliveryfood.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import jakarta.validation.ValidationException;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import com.example.be_deliveryfood.dto.repository.UserRepository;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
+
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
-    private JwtService jwtService;
+    private JwtUtil jwtUtil;
 
-//    public String login(LoginRequest loginRequest) throws Exception {
-//        Optional<User> user = userRepository.findByEmail(loginRequest.getEmail());
-//        if (user.isPresent()) {
-//            if (!user.get().getActive()) {
-//                throw new ValidationException("User account is inactive");
-//            }
-//            return jwtService.generateToken(user.get());
-//        }
-//        throw new ValidationException("Invalid credentials");
-//    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(), user.getPassword(), new ArrayList<>()
+        );
+    }
+
+    public String login(LoginRequest loginRequest) throws Exception {
+        try {
+            Optional<User> user = userRepository.findByEmail(loginRequest.getEmail());
+            if (user.isPresent()) {
+                User foundUser = user.get();
+                if (!foundUser.getActive()) {
+                    System.out.println("Login failed: User is inactive");
+                    throw new ValidationException("User account is inactive");
+                }
+                boolean passwordMatch = passwordEncoder.matches(loginRequest.getPassword(), foundUser.getPassword());
+                if (!passwordMatch) {
+                    System.out.println("Login failed: Password does not match for email " + loginRequest.getEmail());
+                    throw new ValidationException("Invalid credentials");
+                }
+                System.out.println("Login success for email: " + loginRequest.getEmail());
+                return jwtUtil.generateToken(foundUser.getEmail());
+            }
+            System.out.println("Login failed: Email not found - " + loginRequest.getEmail());
+            throw new ValidationException("Invalid credentials");
+        } catch (Exception e) {
+            System.out.println("Exception in login: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
 
     public User register(User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new ValidationException("Email already exists");
         }
-        user.setPassword((user.getPassword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(true);
         return userRepository.save(user);
     }
