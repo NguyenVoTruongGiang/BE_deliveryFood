@@ -1,5 +1,5 @@
 {
-  "user_id": 1,
+  "userId": 1,
   "delivery_address": "123 Main St, City",
   "total_price": 30.97,
   "status": "PENDING",

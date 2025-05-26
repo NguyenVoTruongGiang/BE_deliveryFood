@@ -8,16 +8,16 @@ import java.util.List;
 @Data
 public class OrderRequest {
     @NotBlank(message = "Delivery address is required")
-    private String deliveryAddress;
+    private String delivery_address;
 
     @NotEmpty(message = "Order must contain at least one item")
     private List<OrderItemRequest> items;
 
-    private Long cartId;
+    private Long cart_id;
 
     @Data
     public static class OrderItemRequest {
-        private Long productId;
+        private Long product_id;
         private Integer quantity;
     }
 }

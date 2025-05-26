@@ -3,6 +3,9 @@ package com.example.be_deliveryfood.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "carts")
 @Data
@@ -16,11 +19,16 @@ public class Cart {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Column(name = "add_ons", nullable = false)
     private String addOns;
+
+    // Nếu muốn lấy các sản phẩm trong cart:
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> items = new ArrayList<>();
 
     public Long getId() {
         return id;

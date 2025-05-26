@@ -11,6 +11,9 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
     // tìm kiếm theo userId
     Optional<Cart> findByUserId(Long userId);
 
+    // tìm kiếm theo userId và productId và addOns
+    Optional<Cart> findByUserIdAndProductIdAndAddOns(Long userId, Long productId, String addOns);
+
     // tìm kiếm theo productId
     Optional<Cart> findByProductId(Long productId);
 
