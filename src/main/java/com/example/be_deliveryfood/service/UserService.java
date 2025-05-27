@@ -37,6 +37,10 @@ public class UserService implements UserDetailsService {
         );
     }
 
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     public String login(LoginRequest loginRequest) throws Exception {
         try {
             Optional<User> user = userRepository.findByEmail(loginRequest.getEmail());
