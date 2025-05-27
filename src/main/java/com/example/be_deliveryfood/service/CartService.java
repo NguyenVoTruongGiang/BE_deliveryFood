@@ -29,22 +29,23 @@ public class CartService {
     private UserRepository userRepository;
 
     @Transactional
-    public Cart addToCart(Long userId, CartRequest cartRequest) {
-        User user = userRepository.findById(userId)
+    public Cart addToCart(Long user_id, CartRequest cartRequest) {
+        User user = userRepository.findById(user_id)
                 .orElseThrow(() -> new ValidationException("User not found"));
-        Product product = productRepository.findById(cartRequest.getProductId())
+        Product product = productRepository.findById(cartRequest.getProduct_id())
                 .orElseThrow(() -> new ValidationException("Product not found"));
 
-        // Kiểm tra xem người dùng đã có giỏ hàng và sản phẩm chưa?
-        Cart cart = cartRepository.findByProductId(cartRequest.getProductId())
-                .filter(c -> c.getUser().getId().equals(userId))
+        String addOns = cartRequest.getAdd_ons() != null ? cartRequest.getAdd_ons() : "";
+
+        // Tìm cart theo user, product, addOns
+        Cart cart = cartRepository.findByUserIdAndProductIdAndAddOns(user_id, cartRequest.getProduct_id(), addOns)
                 .orElse(null);
-        if (cart == null) {
+        if (user_id != null || cartRequest.getProduct_id() != null || addOns != null) {
             // tạo cart mới nếu không có cart tồn tại
             cart = new Cart();
             cart.setUser(user);
             cart.setProduct(product);
-            cart.setAddOns(cartRequest.getAddOns() != null ? cartRequest.getAddOns() : "");
+            cart.setAddOns(cartRequest.getAdd_ons() != null ? cartRequest.getAdd_ons() : "");
             cart = cartRepository.save(cart);
         }
 

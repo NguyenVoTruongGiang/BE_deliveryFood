@@ -21,14 +21,15 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @PostMapping("/add")
-    public ResponseEntity<Cart> addToCart(@RequestParam Long userId, @Valid @RequestBody CartRequest cartRequest) {
+    @PostMapping("/add/{user_id}")
+    public ResponseEntity<Cart> addToCart(@PathVariable("user_id") Long userId, @Valid @RequestBody CartRequest cartRequest) {
         Cart cart = cartService.addToCart(userId, cartRequest);
         if (cart == null) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(cart);
     }
+
 
 //    @PostMapping("/order")
 //    public ResponseEntity<Order> createOrder(@Valid @RequestBody OrderRequest orderRequest) {

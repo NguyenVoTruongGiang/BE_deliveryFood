@@ -19,17 +19,17 @@ public class Order {
     private User user;
 
     @Column(length = 255)
-    private String deliveryAddress;
+    private String delivery_address;
 
     @Column(columnDefinition = "DECIMAL(10,2)")
-    private Double totalPrice;
+    private Double total_price;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private OrderStatus status;
 
     @Column
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
     public enum OrderStatus {
         PENDING, PREPARING, DELIVERING, COMPLETED, CANCELLED
