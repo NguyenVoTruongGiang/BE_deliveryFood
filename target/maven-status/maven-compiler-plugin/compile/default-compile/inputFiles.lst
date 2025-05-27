@@ -9,6 +9,7 @@ D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\SecurityConf
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\CartController.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\ProductController.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\UserController.java
+D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\repository\CartItemRepository.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\repository\CartRepository.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\repository\OrderItemRepository.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\repository\OrderRepository.java
@@ -18,6 +19,7 @@ D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\request\CartReq
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\request\LoginRequest.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\dto\request\OrderRequest.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\entity\Cart.java
+D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\entity\CartItem.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\entity\Order.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\entity\OrderItem.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\entity\Product.java
