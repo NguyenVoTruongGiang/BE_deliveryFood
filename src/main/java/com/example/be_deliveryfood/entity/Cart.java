@@ -16,19 +16,13 @@ public class Cart {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
-
-    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "add_ons", nullable = false)
-    private String addOns;
+    // Remove product and addOns fields as they'll be in the CartItem
 
-    // Nếu muốn lấy các sản phẩm trong cart:
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderItem> items = new ArrayList<>();
+    private List<CartItem> cartItems = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -38,27 +32,31 @@ public class Cart {
         this.id = id;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public String getAddOns() {
-        return addOns;
-    }
-
-    public void setAddOns(String addOns) {
-        this.addOns = addOns;
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
+
+    // Helper method to add a cart item
+    public void addCartItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+        cartItem.setCart(this);
+    }
+
+    // Helper method to remove a cart item
+    public void removeCartItem(CartItem cartItem) {
+        cartItems.remove(cartItem);
+        cartItem.setCart(null);
     }
 }
