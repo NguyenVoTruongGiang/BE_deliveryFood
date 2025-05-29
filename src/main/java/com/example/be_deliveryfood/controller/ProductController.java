@@ -24,7 +24,7 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    // phân loại theo dah mục
+    //// phân loại theo dah mục
     @GetMapping("/category")
     public ResponseEntity<List<Product>> getProductsByCategory(@RequestParam String category) {
         List<Product> products = productService.getProductsByCategory(category);

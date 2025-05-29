@@ -18,12 +18,12 @@ public class ProductService {
         return products;
 
     }
-    // search theo danh mục
+    //// search theo danh mục
     public List<Product> getProductsByCategory(String category) {
         return productRepository.findByCategory(category);
     }
 
-    // Phương thức mới: Lấy danh sách danh mục
+    //// Phương thức mới: Lấy danh sách danh mục
     public List<String> getAllCategories() {
         return productRepository.findAll()
                 .stream()

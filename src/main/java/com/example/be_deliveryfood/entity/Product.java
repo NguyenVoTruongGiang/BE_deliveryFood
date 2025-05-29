@@ -48,6 +48,7 @@ public class Product {
         return category;
     }
 
+    // category
     public void setCategory(String category) {
         this.category = category;
     }
