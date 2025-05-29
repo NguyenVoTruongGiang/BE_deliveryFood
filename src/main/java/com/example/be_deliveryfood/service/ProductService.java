@@ -28,6 +28,7 @@ public class ProductService {
 
     public Product updateProduct(Long id, Product productDetails) {
         Product product = getProductById(id);
+        product.setImage(productDetails.getImage());
         product.setName(productDetails.getName());
         product.setCategory(productDetails.getCategory());
         product.setDescription(productDetails.getDescription());

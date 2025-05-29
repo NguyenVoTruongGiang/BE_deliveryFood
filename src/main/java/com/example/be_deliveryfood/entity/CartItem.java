@@ -1,5 +1,6 @@
 package com.example.be_deliveryfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "cart_id", nullable = false)
     private Cart cart;
 
