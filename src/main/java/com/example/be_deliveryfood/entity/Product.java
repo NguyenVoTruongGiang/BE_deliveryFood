@@ -12,6 +12,9 @@ public class Product {
     @Column(columnDefinition = "BIGINT")
     private Long id;
 
+    @Column(unique = true, nullable = false, length = 255)
+    private String image;
+
     @Column(nullable = false, length = 100)
     private String name;
 
@@ -34,6 +37,14 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getName() {

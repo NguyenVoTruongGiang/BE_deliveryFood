@@ -3,11 +3,9 @@ com\example\be_deliveryfood\config\DataSeeder.class
 com\example\be_deliveryfood\config\SecurityConfig.class
 com\example\be_deliveryfood\service\UserService.class
 com\example\be_deliveryfood\entity\User.class
-com\example\be_deliveryfood\service\OrderService.class
 com\example\be_deliveryfood\config\JwtUtil.class
 com\example\be_deliveryfood\dto\request\CartRequest.class
 com\example\be_deliveryfood\config\DataSeeder$2.class
-com\example\be_deliveryfood\dto\request\OrderRequest$OrderItemRequest.class
 com\example\be_deliveryfood\entity\Product.class
 com\example\be_deliveryfood\dto\repository\ProductRepository.class
 com\example\be_deliveryfood\entity\OrderItem.class
@@ -24,7 +22,6 @@ com\example\be_deliveryfood\entity\Order.class
 com\example\be_deliveryfood\config\MessageSourceConfig.class
 com\example\be_deliveryfood\controller\ProductController.class
 com\example\be_deliveryfood\dto\repository\CartRepository.class
-com\example\be_deliveryfood\dto\request\OrderRequest.class
 com\example\be_deliveryfood\dto\repository\UserRepository.class
 com\example\be_deliveryfood\config\JwtAuthenticationFilter.class
 com\example\be_deliveryfood\entity\Cart.class
