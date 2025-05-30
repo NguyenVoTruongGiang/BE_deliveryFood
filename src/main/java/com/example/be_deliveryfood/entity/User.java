@@ -1,6 +1,8 @@
 package com.example.be_deliveryfood.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,9 +19,12 @@ public class User {
     @Column(columnDefinition = "BIGINT")
     private Long id;
 
+    @NotBlank(message = "Email is required")
+    @Email (message = "Email is not valid")
     @Column(unique = true, nullable = false, length = 255)
     private String email;
 
+    @NotBlank(message = "Password is required")
     @Column(nullable = false, length = 255)
     private String password;
 

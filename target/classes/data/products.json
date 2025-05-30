@@ -5,31 +5,31 @@
     "description": "Pizza truyền thống phủ pepperoni, nấm, phô mai mozzarella và húng quế tươi.",
     "price": 11.99,
     "available": true,
-    "image": "/assets/food_img/pizza_pepperoni_nam.jpg"
+    "image": "/assets/food_img/food_img/download (1).jpg"
   },
   {
     "name": "Bánh Cá Taiyaki Nhân Sôcôla",
     "category": "Tráng miệng",
     "description": "Bánh cá giòn rụm nhân sôcôla nóng hổi, hấp dẫn.",
-    "price": 4.50,
+    "price": 4.5,
     "available": true,
-    "image": "/assets/food_img/taiyaki_socola.jpg"
+    "image": "/assets/food_img/food_img/download (2).jpg"
   },
   {
     "name": "Tokbokki & Cơm Cuộn Gimbap",
     "category": "Hàn Quốc",
     "description": "Bánh gạo cay Hàn Quốc ăn kèm cơm cuộn gimbap đa dạng.",
-    "price": 9.00,
+    "price": 9.0,
     "available": true,
-    "image": "/assets/food_img/tokbokki_gimbap.jpg"
+    "image": "/assets/food_img/food_img/download (3).jpg"
   },
   {
     "name": "Gỏi Cuốn Thịt Nướng",
     "category": "Châu Á",
     "description": "Gỏi cuốn tươi với thịt nướng và rau thơm, ăn kèm nước chấm đặc biệt.",
-    "price": 7.50,
+    "price": 7.5,
     "available": true,
-    "image": "/assets/food_img/goi_cuon_thit_nuong.jpg"
+    "image": "/assets/food_img/food_img/download (4).jpg"
   },
   {
     "name": "Bánh Mì Phô Mai Tỏi",
@@ -37,23 +37,23 @@
     "description": "Bánh mì nướng phủ phô mai tan chảy và tỏi thơm, ăn kèm sốt kem.",
     "price": 6.99,
     "available": true,
-    "image": "/assets/food_img/banh_mi_pho_mai_toi.jpg"
+    "image": "/assets/food_img/food_img/download (5).jpg"
   },
   {
     "name": "Cơm Chiên Trứng Cuộn & Thịt Heo Chiên Xù",
     "category": "Nhật Bản",
     "description": "Cơm chiên cuộn trứng mềm mịn, ăn kèm thịt heo chiên xù sốt đặc biệt.",
-    "price": 13.50,
+    "price": 13.5,
     "available": true,
-    "image": "/assets/food_img/omurice_tonkatsu.jpg"
+    "image": "/assets/food_img/food_img/download (6).jpg"
   },
   {
     "name": "Mì Bò Cay",
     "category": "Mì",
     "description": "Nước dùng bò cay đậm đà với mì, thịt bò mềm và hành lá.",
-    "price": 10.00,
+    "price": 10.0,
     "available": true,
-    "image": "/assets/food_img/mi_bo_cay.jpg"
+    "image": "/assets/food_img/food_img/download (7).jpg"
   },
   {
     "name": "Sashimi Thập Cẩm",
@@ -61,7 +61,7 @@
     "description": "Sashimi cá hồi, cá ngừ và nhiều loại cá tươi khác, ăn kèm gừng và mù tạt.",
     "price": 18.99,
     "available": true,
-    "image": "/assets/food_img/sashimi_thap_cam.jpg"
+    "image": "/assets/food_img/food_img/download (8).jpg"
   },
   {
     "name": "Gà Rán Cay Hàn Quốc",
@@ -69,23 +69,23 @@
     "description": "Gà rán giòn phủ sốt cay Hàn Quốc, rưới sốt kem và rau thơm.",
     "price": 12.99,
     "available": true,
-    "image": "/assets/food_img/ga_ran_cay_han_quoc.jpg"
+    "image": "/assets/food_img/food_img/download (9).jpg"
   },
   {
     "name": "Rau Muống Xào Tỏi",
     "category": "Rau",
     "description": "Rau muống tươi xào tỏi, món ăn kèm thanh mát, bổ dưỡng.",
-    "price": 5.50,
+    "price": 5.5,
     "available": true,
-    "image": "/assets/food_img/rau_muong_xao_toi.jpg"
+    "image": "/assets/food_img/food_img/download (10).jpg"
   },
   {
     "name": "Cuộn Trứng & Thanh Cua",
     "category": "Nhật Bản",
     "description": "Cuộn trứng Nhật Bản nhân thanh cua, phủ sốt kem và rau thơm.",
-    "price": 8.00,
+    "price": 8.0,
     "available": true,
-    "image": "/assets/food_img/tamago_cua.jpg"
+    "image": "/assets/food_img/food_img/download (11).jpg"
   },
   {
     "name": "Bánh Crepe Dâu Tây",
@@ -93,23 +93,24 @@
     "description": "Bánh crepe nhiều lớp kem, phủ dâu tây tươi và kem tươi.",
     "price": 7.99,
     "available": true,
-    "image": "/assets/food_img/crepe_dau_tay.jpg"
+    "image": "/assets/food_img/food_img/download (12).jpg"
   },
   {
     "name": "Mì Udon Lạnh",
     "category": "Mì",
     "description": "Mì udon lạnh ăn kèm nước chấm, chanh và hành lá.",
-    "price": 9.50,
+    "price": 9.5,
     "available": true,
-    "image": "/assets/food_img/udon_lanh.jpg"
+    "image": "/assets/food_img/food_img/download (13).jpg"
   },
+
   {
     "name": "Bánh Cuốn Việt Nam",
     "category": "Châu Á",
     "description": "Bánh cuốn nhân thịt và nấm, ăn kèm rau thơm, dưa leo và nước mắm chua ngọt.",
     "price": 6.75,
     "available": true,
-    "image": "/assets/food_img/banh_cuon.jpg"
+    "image": "/assets/food_img/food_img/download (14).jpg"
   },
   {
     "name": "Bánh Sandwich Bướm Dâu",
@@ -117,15 +118,15 @@
     "description": "Bánh mì hồng nhân kem và dâu tây, trang trí hình bướm xinh xắn.",
     "price": 5.99,
     "available": true,
-    "image": "/assets/food_img/sandwich_buom_dau.jpg"
+    "image": "/assets/food_img/food_img/download (15).jpg"
   },
   {
     "name": "Lươn Nhật Nướng",
     "category": "Nhật Bản",
     "description": "Lươn nướng sốt ngọt kiểu Nhật, ăn kèm sushi và mù tạt.",
-    "price": 15.50,
+    "price": 15.5,
     "available": true,
-    "image": "/assets/food_img/luon_nhat_nuong.jpg"
+    "image": "/assets/food_img/food_img/download (16).jpg"
   },
   {
     "name": "Phở Gà Việt Nam",
@@ -133,23 +134,23 @@
     "description": "Phở truyền thống với thịt gà mềm, bánh phở và rau thơm trong nước dùng thơm ngát.",
     "price": 9.99,
     "available": true,
-    "image": "/assets/food_img/pho_ga.jpg"
+    "image": "/assets/food_img/food_img/download (17).jpg "
   },
   {
     "name": "Đậu Hũ Mapo Cay",
     "category": "Trung Quốc",
     "description": "Đậu hũ non sốt cay Tứ Xuyên với thịt băm và hành lá.",
-    "price": 10.50,
+    "price": 10.5,
     "available": true,
-    "image": "/assets/food_img/mapo_tofu.jpg"
+    "image": "/assets/food_img/food_img/download (18).jpg"
   },
   {
     "name": "Burger Bò Phô Mai Bacon",
     "category": "Burger",
     "description": "Burger hai lớp bò, phô mai tan chảy, bacon giòn, hành caramel và sốt kem.",
-    "price": 12.00,
+    "price": 12.0,
     "available": true,
-    "image": "/assets/food_img/burger_bacon.jpg"
+    "image": "/assets/food_img/food_img/download (19).jpg"
   },
   {
     "name": "Phở Bò",
@@ -157,15 +158,15 @@
     "description": "Nước dùng bò đậm đà, thịt bò thái lát, bánh phở và rau thơm tươi.",
     "price": 10.99,
     "available": true,
-    "image": "/assets/food_img/pho_bo.jpg"
+    "image": "/assets/food_img/food_img/download (20).jpg"
   },
   {
     "name": "Súp Mì Gà",
     "category": "Mì",
     "description": "Nước dùng gà thanh nhẹ, thịt gà xé, miến và rau xanh tươi.",
-    "price": 8.50,
+    "price": 8.5,
     "available": true,
-    "image": "/assets/food_img/sup_ga.jpg"
+    "image": "/assets/food_img/food_img/download (21).jpg"
   },
   {
     "name": "Pizza Thập Cẩm",
@@ -173,22 +174,22 @@
     "description": "Pizza đế dày phủ phô mai, pepperoni, rau củ và gia vị thơm.",
     "price": 13.99,
     "available": true,
-    "image": "/assets/food_img/pizza_thap_cam.jpg"
+    "image": "/assets/food_img/food_img/download (22).jpg"
   },
   {
     "name": "Chân Gà Cay",
     "category": "Trung Quốc",
     "description": "Chân gà mềm nấu sốt cay với ớt xanh và đậu phộng.",
-    "price": 7.50,
+    "price": 7.5,
     "available": true,
-    "image": "/assets/food_img/chan_ga_cay.jpg"
+    "image": "/assets/food_img/food_img/download (23).jpg"
   },
   {
     "name": "Pizza Gà Cay Buffalo",
     "category": "Pizza",
     "description": "Pizza phủ gà cay Buffalo, phô mai mozzarella và sốt cay đặc biệt.",
-    "price": 11.50,
+    "price": 11.5,
     "available": true,
-    "image": "/assets/food_img/pizza_ga_cay_buffalo.jpg"
+    "image": "/assets/food_img/food_img/download (24).jpg"
   }
 ]
