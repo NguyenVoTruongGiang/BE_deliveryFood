@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -56,7 +57,10 @@ public class OrderController {
     @GetMapping("/my-orders")
     public ResponseEntity<List<Order>> getCurrentUserOrders() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Long userId = Long.parseLong(auth.getName()); // Giả sử auth.getName() trả về userId dạng chuỗi
+        String email = auth.getName();
+        User user = userService.getUserByEmail(email)
+                .orElseThrow(() -> new ValidationException("User not found with email: " + email));
+        Long userId = user.getId();
 
         List<Order> orders = orderService.getOrdersByUser(userId);
         return ResponseEntity.ok(orders);

@@ -26,6 +26,18 @@ public class ProductService {
         return productRepository.findByCategory(category);
     }
 
+
+    public Product updateProduct(Long id, Product productDetails) {
+        Product product = getProductById(id);
+        product.setImage(productDetails.getImage());
+        product.setName(productDetails.getName());
+        product.setCategory(productDetails.getCategory());
+        product.setDescription(productDetails.getDescription());
+        product.setPrice(productDetails.getPrice());
+        product.setAvailable(productDetails.getAvailable());
+        return productRepository.save(product);
+    }
+
     //// Phương thức mới: Lấy danh sách danh mục
     public List<String> getAllCategories() {
         return productRepository.findAll()
@@ -33,6 +45,7 @@ public class ProductService {
                 .map(Product::getCategory)
                 .distinct()
                 .collect(Collectors.toList());
+
     }
 
 }
