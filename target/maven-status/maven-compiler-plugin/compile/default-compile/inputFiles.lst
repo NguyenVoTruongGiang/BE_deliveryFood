@@ -6,6 +6,7 @@ D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\JwtUtil.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\MessageSourceConfig.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\SecurityBeanConfig.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\SecurityConfig.java
+D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\config\WebConfig.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\CartController.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\OrderController.java
 D:\BE_deliveryFood\src\main\java\com\example\be_deliveryfood\controller\ProductController.java
