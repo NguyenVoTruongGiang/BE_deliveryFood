@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter
 @Setter
 
@@ -44,9 +46,17 @@ public class User {
     @Column(nullable = false)
     private Boolean active = true;
 
+    @ManyToMany
+    @JoinTable(
+            name = "favorites",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Product> favoriteProducts;
+
     public enum Role {
         ADMIN(1),
-        SELLER(2),
+        SHIPPER(2),
         CUSTOMER(3);
 
         private final int value;
@@ -132,5 +142,13 @@ public class User {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Set<Product> getFavoriteProducts() {
+        return favoriteProducts;
+    }
+
+    public void setFavoriteProducts(Set<Product> favoriteProducts) {
+        this.favoriteProducts = favoriteProducts;
     }
 }

@@ -10,6 +10,7 @@ com\example\be_deliveryfood\config\JwtUtil.class
 com\example\be_deliveryfood\dto\request\CartRequest.class
 com\example\be_deliveryfood\config\DataSeeder$2.class
 com\example\be_deliveryfood\entity\CartItem.class
+com\example\be_deliveryfood\entity\favorites.class
 com\example\be_deliveryfood\config\WebConfig.class
 com\example\be_deliveryfood\dto\request\OrderItemRequest.class
 com\example\be_deliveryfood\entity\Product.class

@@ -123,4 +123,9 @@ public class OrderService {
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
+
+    @Transactional(readOnly = true)
+    public List<Order> getOrdersByStatus(Order.OrderStatus status) {
+        return orderRepository.findByStatus(status);
+    }
 }

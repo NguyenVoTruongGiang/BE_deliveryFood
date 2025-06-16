@@ -10,6 +10,7 @@ import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
@@ -33,6 +34,7 @@ public class CartController {
 
     // Lấy giỏ hàng của user hiện tại
     @GetMapping("/my_cart")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<Cart> getMyCart() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String email = auth.getName();

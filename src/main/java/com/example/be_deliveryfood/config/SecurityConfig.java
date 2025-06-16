@@ -22,10 +22,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http
+                .cors().and()
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user/login", "/user/register", "/user/send-register-otp", "/user/send-forgot-password-otp").permitAll()
+                        .requestMatchers("/user/login", "/user/register", "/user/send-register-otp", "/user/send-forgot-password-otp", "user/id").permitAll()
                         .requestMatchers("/user/**", "/cart/**, /order/**").authenticated()
                         .anyRequest().permitAll()
                 )
