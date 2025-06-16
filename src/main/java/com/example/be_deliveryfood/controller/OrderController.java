@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -41,6 +40,13 @@ public class OrderController {
         Order createdOrder = orderService.createOrder(orderRequest, userId);
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Order>> getAllOrders() {
+        List<Order> orders = orderService.getAllOrders();
+        return ResponseEntity.ok(orders);
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
@@ -74,15 +80,9 @@ public class OrderController {
         return ResponseEntity.ok(updatedOrder);
     }
 
-//    @PostMapping("/{id}/cancel")
-//    public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
-//        orderService.cancelOrder(id);
-//        return ResponseEntity.noContent().build();
-//    }
-//
-//    @GetMapping
-//    public ResponseEntity<List<Order>> getAllOrders() {
-//        List<Order> orders = orderService.getAllOrders();
-//        return ResponseEntity.ok(orders);
-//    }
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
+        orderService.cancelOrder(id);
+        return ResponseEntity.noContent().build();
+    }
 }

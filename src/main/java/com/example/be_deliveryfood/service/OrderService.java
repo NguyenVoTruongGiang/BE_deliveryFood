@@ -101,7 +101,7 @@ public class OrderService {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + orderId));
 
-        order.getStatus();
+        order.setStatus(status);
         return orderRepository.save(order);
     }
 

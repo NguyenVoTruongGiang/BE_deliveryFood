@@ -1,5 +1,6 @@
 package com.example.be_deliveryfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -37,6 +38,7 @@ public class Order {
     private LocalDateTime created_at;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<OrderItem> order_items = new ArrayList<>();
 
     public enum OrderStatus {
