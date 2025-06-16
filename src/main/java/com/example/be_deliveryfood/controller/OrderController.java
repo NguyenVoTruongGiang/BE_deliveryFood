@@ -41,6 +41,13 @@ public class OrderController {
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Order>> getAllOrders() {
+        List<Order> orders = orderService.getAllOrders();
+        return ResponseEntity.ok(orders);
+    }
+
+
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
         Order order = orderService.getOrderById(id);
@@ -56,7 +63,10 @@ public class OrderController {
     @GetMapping("/my-orders")
     public ResponseEntity<List<Order>> getCurrentUserOrders() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Long userId = Long.parseLong(auth.getName()); // Giả sử auth.getName() trả về userId dạng chuỗi
+        String email = auth.getName();
+        User user = userService.getUserByEmail(email)
+                .orElseThrow(() -> new ValidationException("User not found with email: " + email));
+        Long userId = user.getId();
 
         List<Order> orders = orderService.getOrdersByUser(userId);
         return ResponseEntity.ok(orders);
@@ -70,15 +80,9 @@ public class OrderController {
         return ResponseEntity.ok(updatedOrder);
     }
 
-//    @PostMapping("/{id}/cancel")
-//    public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
-//        orderService.cancelOrder(id);
-//        return ResponseEntity.noContent().build();
-//    }
-//
-//    @GetMapping
-//    public ResponseEntity<List<Order>> getAllOrders() {
-//        List<Order> orders = orderService.getAllOrders();
-//        return ResponseEntity.ok(orders);
-//    }
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<Void> cancelOrder(@PathVariable Long id) {
+        orderService.cancelOrder(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -4,6 +4,8 @@ import com.example.be_deliveryfood.dto.repository.*;
 import com.example.be_deliveryfood.entity.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
@@ -14,6 +16,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Component
 public class DataSeeder implements CommandLineRunner {
 

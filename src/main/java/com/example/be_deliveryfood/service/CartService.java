@@ -32,7 +32,6 @@ public class CartService {
         
         String addOns = cartRequest.getAdd_ons() != null ? cartRequest.getAdd_ons() : "";
         
-        // Find or create cart for this user
         Cart cart = cartRepository.findByUserId(userId)
                 .orElseGet(() -> {
                     Cart newCart = new Cart();
@@ -40,7 +39,6 @@ public class CartService {
                     return cartRepository.save(newCart);
                 });
         
-        // Find cart item if it exists (you'll need to create this repository method)
         CartItem cartItem = cartItemRepository.findByCartIdAndProductIdAndAddOns(
                 cart.getId(), product.getId(), addOns).orElse(null);
         
@@ -67,5 +65,50 @@ public class CartService {
         }
         
         return cartRepository.save(cart);
+    }
+
+    // Lấy giỏ hàng theo email user
+    @Transactional(readOnly = true)
+    public Cart getCartByUserEmail(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ValidationException("User not found"));
+        return cartRepository.findByUserId(user.getId())
+                .orElseThrow(() -> new ValidationException("Cart not found"));
+    }
+
+    @Transactional
+    public Cart updateCartItem(Long cartItemId, CartRequest cartRequest) {
+        CartItem cartItem = cartItemRepository.findById(cartItemId)
+                .orElseThrow(() -> new ValidationException("Cart item not found"));
+        if (cartRequest.getQuantity() != null) {
+            cartItem.setQuantity(cartRequest.getQuantity());
+        }
+        if (cartRequest.getAdd_ons() != null) {
+            cartItem.setAddOns(cartRequest.getAdd_ons());
+        }
+        cartItemRepository.save(cartItem);
+        return cartItem.getCart();
+    }
+
+    // Xóa 1 sản phẩm khỏi giỏ hàng
+    @Transactional
+    public void removeCartItem(Long cartItemId) {
+        CartItem cartItem = cartItemRepository.findById(cartItemId)
+                .orElseThrow(() -> new ValidationException("Cart item not found"));
+        Cart cart = cartItem.getCart();
+        cart.removeCartItem(cartItem);
+        cartItemRepository.delete(cartItem);
+        cartRepository.save(cart);
+    }
+
+    // Xóa toàn bộ giỏ hàng
+    @Transactional
+    public void clearCart(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ValidationException("User not found"));
+        Cart cart = cartRepository.findByUserId(user.getId())
+                .orElseThrow(() -> new ValidationException("Cart not found"));
+        cart.getCartItems().clear();
+        cartRepository.save(cart);
     }
 }
