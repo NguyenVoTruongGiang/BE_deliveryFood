@@ -5,7 +5,7 @@
     "description": "Pizza truyền thống phủ pepperoni, nấm, phô mai mozzarella và húng quế tươi.",
     "price": 11.99,
     "available": true,
-    "image": "/assets/food_img/food_img/pizzaNam.jpgjpg"
+    "image": "/assets/food_img/food_img/pizzaNam.jpg"
   },
   {
     "name": "Bánh Cá Taiyaki Nhân Sôcôla",
@@ -85,7 +85,7 @@
     "description": "Cuộn trứng Nhật Bản nhân thanh cua, phủ sốt kem và rau thơm.",
     "price": 8.0,
     "available": true,
-    "image": "/assets/food_img/food_img/comcuoncomcuon.jpg"
+    "image": "/assets/food_img/food_img/comcuon.jpg"
   },
   {
     "name": "Bánh Crepe Dâu Tây",

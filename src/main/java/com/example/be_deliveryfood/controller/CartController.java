@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/cart")
 public class CartController {
@@ -42,7 +41,7 @@ public class CartController {
     }
 
     // Cập nhật số lượng hoặc add_ons của 1 cart item
-    @PutMapping("/updateItem/{cart_Id}")
+    @PutMapping("/updateItem/{cartItemId}")
     public ResponseEntity<Cart> updateCartItem(
             @PathVariable Long cartItemId,
             @RequestBody CartRequest cartRequest
@@ -52,7 +51,7 @@ public class CartController {
     }
 
     // Xóa 1 sản phẩm khỏi giỏ hàng
-    @DeleteMapping("/deleteItem/{cart_id}")
+    @DeleteMapping("/deleteItem/{cartItemId}")
     public ResponseEntity<Void> removeCartItem(@PathVariable Long cartItemId) {
         cartService.removeCartItem(cartItemId);
         return ResponseEntity.noContent().build();

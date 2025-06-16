@@ -2,6 +2,7 @@ package com.example.be_deliveryfood.controller;
 
 import com.example.be_deliveryfood.dto.request.LoginRequest;
 import com.example.be_deliveryfood.entity.User;
+import com.example.be_deliveryfood.service.EmailService;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private EmailService emailService;
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> login(@Valid @RequestBody LoginRequest loginRequest) throws Exception {
@@ -40,6 +43,28 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> register(@Valid @RequestBody User user) {
         return ResponseEntity.ok(userService.register(user));
+    }
+
+    // Gửi OTP cho đăng ký tài khoản
+    @PostMapping("/send-register-otp")
+    public ResponseEntity<Map<String, String>> sendRegisterOtp(@RequestBody Map<String, String> request) {
+        String to = request.get("to");
+        String otp = emailService.sendRegisterOtp(to);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Verification OTP sent");
+        // response.put("otp", otp); // chỉ trả về nếu muốn test, thực tế không nên trả về OTP cho client
+        return ResponseEntity.ok(response);
+    }
+
+    // Gửi OTP cho quên mật khẩu
+    @PostMapping("/send-forgot-password-otp")
+    public ResponseEntity<Map<String, String>> sendForgotPasswordOtp(@RequestBody Map<String, String> request) {
+        String to = request.get("to");
+        String otp = emailService.sendForgotPasswordOtp(to);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Reset password OTP sent");
+        // response.put("otp", otp); // chỉ trả về nếu muốn test
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{id}")
