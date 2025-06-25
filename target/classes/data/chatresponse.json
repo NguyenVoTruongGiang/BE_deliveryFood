@@ -1,0 +1,512 @@
+[
+  {
+    "keyword": "đơn hàng",
+    "response": "Vui lòng cung cấp mã đơn hàng để chúng tôi hỗ trợ bạn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "theo dõi",
+    "response": "Bạn có thể theo dõi đơn hàng bằng cách nhập mã trên trang Theo dõi.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hủy",
+    "response": "Vui lòng cung cấp mã đơn hàng để hủy đơn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hoạt động",
+    "response": "Chúng tôi làm việc từ 8:00 sáng đến 00:00 tối, tất cả các ngày.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giúp",
+    "response": "Chúng tôi sẵn sàng hỗ trợ! Bạn cần giúp gì?",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thanh toán",
+    "response": "Vui lòng kiểm tra phương thức thanh toán hoặc liên hệ ngân hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giao hàng",
+    "response": "Thông tin giao hàng được cập nhật trên trang Theo dõi.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "chậm giao",
+    "response": "Chúng tôi xin lỗi vì sự bất tiện. Vui lòng cung cấp mã đơn để kiểm tra.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hàng lỗi",
+    "response": "Vui lòng gửi hình ảnh sản phẩm lỗi và mã đơn để được hỗ trợ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đổi trả",
+    "response": "Chính sách đổi trả được áp dụng trong 48 giờ. Vui lòng cung cấp mã đơn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "khuyến mãi",
+    "response": "Thông tin khuyến mãi hiện tại có trên trang chủ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "voucher",
+    "response": "Vui lòng nhập mã voucher tại bước thanh toán.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "mã giảm giá",
+    "response": "Mã giảm giá chỉ áp dụng cho đơn hàng đủ điều kiện.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "tài khoản",
+    "response": "Vui lòng đăng nhập hoặc kiểm tra thông tin tài khoản.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "mật khẩu",
+    "response": "Đi đến trang Quên mật khẩu để đặt lại mật khẩu.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đăng nhập",
+    "response": "Đăng nhập bằng email hoặc số điện thoại đã đăng ký.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đăng ký",
+    "response": "Hãy đăng ký tài khoản trên trang web hoặc ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "địa chỉ",
+    "response": "Vui lòng cập nhật địa chỉ giao hàng trong phần tài khoản.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "số điện thoại",
+    "response": "Vui lòng kiểm tra số điện thoại liên hệ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "email",
+    "response": "Email hỗ trợ: support@deliveryfood.com.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "phí giao hàng",
+    "response": "Phí giao hàng được tính dựa trên khoảng cách. Xem chi tiết tại trang Giá.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thời gian giao",
+    "response": "Thời gian giao hàng dự kiến hiển thị khi đặt hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đơn hàng sai",
+    "response": "Vui lòng cung cấp mã đơn và mô tả lỗi để chúng tôi xử lý.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hàng hỏng",
+    "response": "Chúng tôi sẽ hoàn tiền hoặc gửi lại nếu sản phẩm hỏng. Gửi mã đơn nhé.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hủy miễn phí",
+    "response": "Hủy đơn miễn phí trước khi nhà hàng xác nhận.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "nhà hàng",
+    "response": "Vui lòng liên hệ nhà hàng qua số điện thoại trong đơn hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đối tác",
+    "response": "Chúng tôi hợp tác với các nhà hàng uy tín. Xem danh sách tại trang Đối tác.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "menu",
+    "response": "Xem menu nhà hàng trên ứng dụng hoặc trang web.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đánh giá",
+    "response": "Đánh giá nhà hàng sau khi nhận hàng để cải thiện dịch vụ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "phản hồi",
+    "response": "Phản hồi của bạn được gửi đến đội ngũ hỗ trợ. Cảm ơn bạn!",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "chất lượng",
+    "response": "Chúng tôi cam kết chất lượng sản phẩm từ nhà hàng đối tác.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "an toàn",
+    "response": "Đảm bảo an toàn thực phẩm là ưu tiên hàng đầu của chúng tôi.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "gói hàng",
+    "response": "Sản phẩm được đóng gói cẩn thận trước khi giao.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thêm món",
+    "response": "Vui lòng đặt đơn mới để thêm món ăn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giảm món",
+    "response": "Liên hệ ngay để chỉnh sửa đơn hàng trước khi xác nhận.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hóa đơn",
+    "response": "Hóa đơn điện tử được gửi qua email sau khi hoàn tất.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hoàn tiền",
+    "response": "Hoàn tiền trong 3-5 ngày nếu đơn hàng đủ điều kiện.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "ngân hàng",
+    "response": "Vui lòng kiểm tra thông tin ngân hàng khi thanh toán.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thẻ tín dụng",
+    "response": "Thẻ tín dụng được chấp nhận: Visa, MasterCard.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "momo",
+    "response": "Thanh toán qua Momo nhanh chóng và an toàn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "tiền mặt",
+    "response": "Thanh toán tiền mặt khi nhận hàng, chuẩn bị tiền lẻ nhé.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "trạng thái",
+    "response": "Trạng thái đơn hàng được cập nhật trên ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "xác nhận",
+    "response": "Đơn hàng đã xác nhận sẽ được giao trong thời gian sớm nhất.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "chưa nhận",
+    "response": "Chưa nhận hàng? Vui lòng cung cấp mã đơn để kiểm tra.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giao sai",
+    "response": "Giao sai món? Gửi mã đơn và hình ảnh để chúng tôi xử lý.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "tài xế",
+    "response": "Liên hệ tài xế qua số điện thoại trong thông tin đơn hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đường phố",
+    "response": "Vui lòng cung cấp địa chỉ chi tiết để giao hàng chính xác.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giờ cao điểm",
+    "response": "Giờ cao điểm có thể ảnh hưởng đến thời gian giao.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "ưu đãi",
+    "response": "Ưu đãi mới được cập nhật hàng tuần trên ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "báo cáo",
+    "response": "Vui lòng báo cáo vấn đề qua mục Hỗ trợ trong ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "dịch vụ",
+    "response": "Chúng tôi luôn cải thiện dịch vụ dựa trên ý kiến của bạn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "liên hệ",
+    "response": "Hỗ trợ 24/7 qua hotline hoặc email support@deliveryfood.com.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "câu hỏi",
+    "response": "Thắc mắc thường gặp có tại trang FAQ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "điểm thưởng",
+    "response": "Điểm thưởng được tích lũy sau mỗi đơn hàng thành công.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "quà tặng",
+    "response": "Quà tặng áp dụng cho đơn hàng đạt giá trị tối thiểu.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "sự kiện",
+    "response": "Sự kiện đặc biệt được thông báo qua ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giới thiệu",
+    "response": "Chia sẻ ứng dụng để nhận ưu đãi giới thiệu bạn bè.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "bảo mật",
+    "response": "Thông tin cá nhân được bảo mật tuyệt đối.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "chính sách",
+    "response": "Chính sách sử dụng được đăng trên trang web.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "điều khoản",
+    "response": "Đọc điều khoản dịch vụ trước khi sử dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "tốc độ",
+    "response": "Giao hàng nhanh trong vòng 30-45 phút.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "vùng phủ sóng",
+    "response": "Chúng tôi giao hàng tại các thành phố lớn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hỗ trợ khách hàng",
+    "response": "Đội ngũ hỗ trợ sẵn sàng trả lời mọi câu hỏi.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "món ăn",
+    "response": "Món ăn được chuẩn bị tươi ngon từ nhà hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thực đơn",
+    "response": "Thực đơn đa dạng, từ món Á đến Âu.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "combo",
+    "response": "Combo tiết kiệm có sẵn trên ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "gia cả",
+    "response": "Giá cả minh bạch, không phí ẩn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "chương trình",
+    "response": "Chương trình khuyến mãi được cập nhật thường xuyên.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hàng mới",
+    "response": "Sản phẩm mới được thêm vào menu hàng tuần.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đặc biệt",
+    "response": "Món ăn đặc biệt được gợi ý trong mục Nổi bật.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giao hàng miễn phí",
+    "response": "Miễn phí giao hàng cho đơn từ 200.000 VNĐ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đơn hàng tối thiểu",
+    "response": "Đơn hàng tối thiểu 50.000 VNĐ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "thời tiết",
+    "response": "Thời tiết xấu có thể ảnh hưởng đến giao hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đặt lịch",
+    "response": "Đặt lịch giao hàng trước qua ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "giao hàng nhanh",
+    "response": "Dịch vụ giao nhanh có phí phụ thu.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "hỗ trợ ưu tiên",
+    "response": "Hỗ trợ ưu tiên cho khách hàng VIP.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "đăng xuất",
+    "response": "Đăng xuất tài khoản trong phần Cài đặt.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "cập nhật",
+    "response": "Cập nhật ứng dụng để trải nghiệm tốt hơn.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "phiên bản",
+    "response": "Phiên bản mới nhất có tại cửa hàng ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "lỗi hệ thống",
+    "response": "Chúng tôi đang khắc phục lỗi, vui lòng thử lại sau.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "phản ánh",
+    "response": "Phản ánh vấn đề qua mục Góp ý trong ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "tín nhiệm",
+    "response": "Chúng tôi cam kết mang đến dịch vụ đáng tin cậy.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi cần hỗ trợ về đơn hàng.",
+    "response": "Vui lòng cung cấp mã đơn hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Làm thế nào để theo dõi đơn hàng?",
+    "response": "Nhập mã đơn hàng trên trang Theo dõi.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi muốn hủy đơn hàng.",
+    "response": "Cung cấp mã đơn hàng để hủy.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Giờ hoạt động của bạn là gì?",
+    "response": "8:00 sáng - 00:00 tối, tất cả các ngày.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi có thể thanh toán bằng cách nào?",
+    "response": "Chấp nhận thẻ, Momo, tiền mặt.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tại sao đơn hàng của tôi chậm?",
+    "response": "Vui lòng cung cấp mã đơn để kiểm tra.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi nhận sai món ăn.",
+    "response": "Gửi mã đơn và hình ảnh để xử lý.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Làm sao để đổi mật khẩu?",
+    "response": "Đi đến trang Quên mật khẩu.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi muốn cập nhật địa chỉ.",
+    "response": "Cập nhật địa chỉ trong phần Tài khoản.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Voucher của tôi không hoạt động.",
+    "response": "Kiểm tra điều kiện áp dụng voucher.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi muốn xem menu.",
+    "response": "Menu có trên ứng dụng hoặc trang web.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Phí giao hàng bao nhiêu?",
+    "response": "Phí dựa trên khoảng cách, xem tại trang Giá.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi có thể đặt lịch giao hàng?",
+    "response": "Đặt lịch qua ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Làm sao để đánh giá nhà hàng?",
+    "response": "Đánh giá sau khi nhận hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi muốn hoàn tiền.",
+    "response": "Hoàn tiền trong 3-5 ngày nếu đủ điều kiện.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi có thể thêm món sau khi đặt?",
+    "response": "Đặt đơn mới để thêm món.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Làm sao để liên hệ tài xế?",
+    "response": "Số tài xế có trong thông tin đơn hàng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi muốn xem lịch sử đơn hàng.",
+    "response": "Xem tại mục Lịch sử trong ứng dụng.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Chương trình khuyến mãi hiện tại?",
+    "response": "Khuyến mãi cập nhật trên trang chủ.",
+    "is_suggestion": false
+  },
+  {
+    "keyword": "Tôi có thể trở thành khách hàng VIP?",
+    "response": "Tham gia chương trình VIP qua ứng dụng.",
+    "is_suggestion": false
+  }
+]

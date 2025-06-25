@@ -39,4 +39,14 @@ public class EmailService {
         mailSender.send(message);
         return otp;
     }
+
+    public void sendContactConfirmationEmail(String email, Long sessionId) {
+        // Giả lập gửi email (thay bằng logic thực tế của bạn)
+        System.out.println("Gửi email xác nhận đến " + email + " cho phiên chat ID: " + sessionId);
+    }
+
+    public void sendContactResponseEmail(String email, String message) {
+        // Giả lập gửi email (thay bằng logic thực tế của bạn)
+        System.out.println("Gửi email phản hồi đến " + email + ": " + message);
+    }
 }

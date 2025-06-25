@@ -3,6 +3,8 @@ package com.example.be_deliveryfood.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "products")
 @Data
@@ -26,6 +28,9 @@ public class Product {
 
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
     private Double price;
+
+//    @ManyToMany(mappedBy = "favoriteProducts")
+//    private Set<User> favoritedBy;
 
 
     @Column(nullable = false)
@@ -87,4 +92,12 @@ public class Product {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
+//    public Set<User> getFavoritedBy() {
+//        return favoritedBy;
+//    }
+//
+//    public void setFavoritedBy(Set<User> favoritedBy) {
+//        this.favoritedBy = favoritedBy;
+//    }
 }

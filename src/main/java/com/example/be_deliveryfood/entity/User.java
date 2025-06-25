@@ -1,11 +1,16 @@
 package com.example.be_deliveryfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -46,7 +51,7 @@ public class User {
 
     public enum Role {
         ADMIN(1),
-        SELLER(2),
+        SHIPPER(2),
         CUSTOMER(3);
 
         private final int value;
@@ -68,7 +73,6 @@ public class User {
             throw new IllegalArgumentException("Invalid role value: " + value);
         }
     }
-
 
     public Long getId() {
         return id;

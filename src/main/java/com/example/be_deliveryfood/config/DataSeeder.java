@@ -13,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -26,6 +25,7 @@ public class DataSeeder implements CommandLineRunner {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final CartRepository cartRepository;
+    private final ChatResponseRepository chatResponseRepository;
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Autowired
@@ -37,7 +37,9 @@ public class DataSeeder implements CommandLineRunner {
             OrderRepository orderRepository,
             OrderItemRepository orderItemRepository,
             CartRepository cartRepository,
-            PasswordEncoder passwordEncoder 
+            PasswordEncoder passwordEncoder,
+            ChatResponseRepository ChatResponseRepository
+
     ) {
         this.userRepository = userRepository;
         this.productRepository = productRepository;
@@ -45,6 +47,7 @@ public class DataSeeder implements CommandLineRunner {
         this.orderItemRepository = orderItemRepository;
         this.cartRepository = cartRepository;
         this.passwordEncoder = passwordEncoder;
+        this.chatResponseRepository = ChatResponseRepository;
     }
 
     @Override
@@ -69,6 +72,17 @@ public class DataSeeder implements CommandLineRunner {
                 System.out.println("Seeded products from JSON!");
             } catch (Exception e) {
                 System.out.println("Failed to seed products: " + e.getMessage());
+            }
+        }
+
+        if (chatResponseRepository.count() == 0) {
+            try {
+                InputStream chatResponseStream = new ClassPathResource("data/chatresponse.json").getInputStream();
+                List<ChatResponse> chatResponses = mapper.readValue(chatResponseStream, new TypeReference<List<ChatResponse>>() {});
+                chatResponseRepository.saveAll(chatResponses);
+                System.out.println("Seeded chatresponse from JSON!");
+            } catch (Exception e) {
+                System.out.println("Failed to seed chatresponse: " + e.getMessage());
             }
         }
     }

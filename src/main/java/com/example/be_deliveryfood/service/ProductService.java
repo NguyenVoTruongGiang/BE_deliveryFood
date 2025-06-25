@@ -21,7 +21,8 @@ public class ProductService {
         return products;
 
     }
-    //// search theo danh mục
+
+    // search theo danh mục
     public List<Product> getProductsByCategory(String category) {
         return productRepository.findByCategory(category);
     }

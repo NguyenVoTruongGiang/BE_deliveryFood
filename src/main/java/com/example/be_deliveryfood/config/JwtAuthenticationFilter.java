@@ -1,6 +1,7 @@
 package com.example.be_deliveryfood.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,8 +22,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Lazy
     @Autowired
-    private UserDetailsService userDetailsService; // This will now resolve to UserService
+    private UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -31,7 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String username = null;
         String jwt = null;
 
-        if (header != null && header.startsWith("Bearer ")) {
+        if (header != null && header.startsWith("Bearer")) {
             jwt = header.substring(7);
             username = jwtUtil.getUsernameFromToken(jwt);
         }
