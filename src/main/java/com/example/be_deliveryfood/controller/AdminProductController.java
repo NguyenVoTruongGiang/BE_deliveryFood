@@ -26,7 +26,7 @@ public class AdminProductController {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
-    @PostMapping
+    @PostMapping("addProduct")
     public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) {
         return ResponseEntity.ok(productService.createProduct(product));
     }

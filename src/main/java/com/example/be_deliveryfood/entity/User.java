@@ -1,5 +1,6 @@
 package com.example.be_deliveryfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -7,6 +8,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -46,14 +49,6 @@ public class User {
     @Column(nullable = false)
     private Boolean active = true;
 
-    @ManyToMany
-    @JoinTable(
-            name = "favorites",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private Set<Product> favoriteProducts;
-
     public enum Role {
         ADMIN(1),
         SHIPPER(2),
@@ -78,7 +73,6 @@ public class User {
             throw new IllegalArgumentException("Invalid role value: " + value);
         }
     }
-
 
     public Long getId() {
         return id;
@@ -142,13 +136,5 @@ public class User {
 
     public void setActive(Boolean active) {
         this.active = active;
-    }
-
-    public Set<Product> getFavoriteProducts() {
-        return favoriteProducts;
-    }
-
-    public void setFavoriteProducts(Set<Product> favoriteProducts) {
-        this.favoriteProducts = favoriteProducts;
     }
 }

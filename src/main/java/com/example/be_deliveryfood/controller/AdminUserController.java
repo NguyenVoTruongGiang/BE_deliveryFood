@@ -1,5 +1,6 @@
 package com.example.be_deliveryfood.controller;
 
+import com.example.be_deliveryfood.config.JwtUtil;
 import com.example.be_deliveryfood.entity.User;
 import com.example.be_deliveryfood.service.UserService;
 import jakarta.validation.Valid;
@@ -14,12 +15,47 @@ import java.util.List;
 public class AdminUserController {
 
     @Autowired
+    private JwtUtil jwtUtil;
+
+
+    @Autowired
     private UserService userService;
+
+//    @GetMapping
+//    public ResponseEntity<List<User>> getAllUsers(@RequestHeader(value = "Authorization", required = false) String token) {
+//        System.out.println("GetAllUsers endpoint called with token: " + (token != null ? "provided" : "not provided"));
+//        try {
+//            if (token != null && token.startsWith("Bearer ")) {
+//                String jwt = token.substring(7);
+//                System.out.println("JWT: " + jwt.substring(0, Math.min(jwt.length(), 20)) + "...");
+//                // Thêm log để xem JWT có hợp lệ không
+//                try {
+//                    String username = jwtUtil.getUsernameFromToken(jwt);
+//                    String role = jwtUtil.getRoleFromToken(jwt);
+//                    System.out.println("Username from token: " + username);
+//                    System.out.println("Role from token: " + role);
+//                } catch (Exception e) {
+//                    System.out.println("Error parsing JWT: " + e.getMessage());
+//                }
+//            }
+//
+//            List<User> users = userService.getAllUsers();
+//            System.out.println("Users found: " + users.size());
+//            return ResponseEntity.ok(users);
+//        } catch (Exception e) {
+//            System.err.println("Error in getAllUsers: " + e.getMessage());
+//            e.printStackTrace();
+//            throw e;
+//        }
+//    }
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
-        return ResponseEntity.ok(userService.getAllUsersSortedByName());
+        List<User> orders = userService.getAllUsers();
+        return ResponseEntity.ok(orders);
     }
+
+
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {

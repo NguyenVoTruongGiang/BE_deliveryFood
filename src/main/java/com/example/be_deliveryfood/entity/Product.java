@@ -29,8 +29,8 @@ public class Product {
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
     private Double price;
 
-    @ManyToMany(mappedBy = "favoriteProducts")
-    private Set<User> favoritedBy;
+//    @ManyToMany(mappedBy = "favoriteProducts")
+//    private Set<User> favoritedBy;
 
 
     @Column(nullable = false)
@@ -93,11 +93,11 @@ public class Product {
         this.available = available;
     }
 
-    public Set<User> getFavoritedBy() {
-        return favoritedBy;
-    }
-
-    public void setFavoritedBy(Set<User> favoritedBy) {
-        this.favoritedBy = favoritedBy;
-    }
+//    public Set<User> getFavoritedBy() {
+//        return favoritedBy;
+//    }
+//
+//    public void setFavoritedBy(Set<User> favoritedBy) {
+//        this.favoritedBy = favoritedBy;
+//    }
 }

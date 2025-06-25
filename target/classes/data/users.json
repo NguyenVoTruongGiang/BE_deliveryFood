@@ -3,7 +3,7 @@
     "email": "giang@gmail.com",
     "password": "123456789",
     "name": "giang",
-    "address": "HCM",
+    "address": "12 Đường số 185",
     "phone": "0123456789",
     "role": 2,
     "active": true
@@ -12,7 +12,7 @@
     "email": "admin@gmail.com",
     "password": "admin123",
     "name": "Admin",
-    "address": "HCM",
+    "address": "san bong da 185",
     "phone": "0987654321",
     "role": 1,
     "active": true

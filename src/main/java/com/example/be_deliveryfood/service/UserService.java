@@ -4,6 +4,8 @@ import com.example.be_deliveryfood.config.JwtUtil;
 import com.example.be_deliveryfood.dto.request.LoginRequest;
 import com.example.be_deliveryfood.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -28,14 +30,26 @@ public class UserService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        if (user.getRole() != null) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
+        }
+
         return new org.springframework.security.core.userdetails.User(
-                user.getEmail(), user.getPassword(), new ArrayList<>()
+                user.getEmail(), user.getPassword(), authorities
         );
     }
+
 
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email);
@@ -74,6 +88,20 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(true);
         return userRepository.save(user);
+    }
+
+    public User handleOAuth2User(String email, String name) {
+        User user = userRepository.findByEmail(email)
+                .orElseGet(() -> {
+                    User newUser = new User();
+                    newUser.setEmail(email);
+                    newUser.setName(name != null ? name : email.split("@")[0]); // Fallback name
+                    newUser.setPassword(passwordEncoder.encode("oauth2-placeholder"));
+                    newUser.setRole(User.Role.CUSTOMER);
+                    newUser.setActive(true);
+                    return userRepository.save(newUser);
+                });
+        return user;
     }
 
     public User updateUser(Long id, User userDetails) {
